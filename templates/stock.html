@@ -16,16 +16,17 @@
 </head>
 <body>
 <div>
-    <form class="bs-example bs-example-form" role="form" action="{{url_for('homepage')}}" method="POST">
+    <form class="bs-example bs-example-form" role="form" action="{{url_for('stock')}}" method="POST">
         <br>
         <div class="input-group" style="margin-left: 5%">
+            <h5>股票简要行情查询</h5>
             <input type="text" class="form-control" style="display: inline;width: 50%;height: 25px" name="storkcode">
             <input type="submit" value="查询" style="margin-left: 2%" name="query">
         </div>
         <div>
             {% if result %}
             <table class="table table-hover table-bordered" style="width: 50%;margin-left: 5%">
-                <caption>股票查询结果</caption>
+                <caption>查询结果如下</caption>
                 <thead>
                 <tr>
                     <th>股票名称</th>
@@ -58,7 +59,7 @@
             </alert>
             {% endif %}
         </div>
-    </form>
+        </form>
 </div>
 </body>
 </html>
