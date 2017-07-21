@@ -2,17 +2,17 @@
 import urllib.request
 
 
-def get_stock(stock_no):
+def get_stock(stock_no1):
     # 使用腾讯股票查询接口进行查询
-    f = urllib.request.urlopen('http://qt.gtimg.cn/q=s_' + str(stock_no))
+    f = urllib.request.urlopen('http://qt.gtimg.cn/q=s_' + str(stock_no1))
     res = f.read().decode('gbk')
     f.close()
     return res
 
 
-def result_parse(result):
+def result_parse(result1):
     res_dict = {}
-    result_spl = result[14:-3].split('~')
+    result_spl = result1[14:-3].split('~')
     res_dict['stock_name'] = result_spl[1]
     res_dict['stock_no'] = result_spl[2]
     res_dict['current_price'] = result_spl[3]
@@ -24,15 +24,15 @@ def result_parse(result):
     return res_dict
 
 
-def stock_check(stock_no):
-    if len(stock_no) != 6:
+def stock_check(stock_no1):
+    if len(stock_no1) != 6:
         return 0
-    no_first = stock_no[0]
+    no_first = stock_no1[0]
     if int(no_first) == 6:
-        code = 'sh' + stock_no
+        code = 'sh' + stock_no1
         return code
     elif (int(no_first) == 0) | (int(no_first) == 3):
-        code = 'sz' + stock_no
+        code = 'sz' + stock_no1
         return code
     else:
         return 0
