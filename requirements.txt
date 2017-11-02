@@ -1,0 +1,4 @@
+flask
+pypinyin
+chardet
+request

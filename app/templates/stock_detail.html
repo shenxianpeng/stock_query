@@ -14,6 +14,7 @@
         }
     </style>
 </head>
+
 <body>
 <div>
     <form class="bs-example bs-example-form" role="form" action="{{url_for('stock_detail')}}" method="POST">
@@ -35,25 +36,25 @@
                     <th>昨   收</th>
                     <th>今   开</th>
                     <th>成交量(手)</th>
-                    <th>外盘</th>
-                    <th>内盘</th>
-                    <th>买一</th>
+                    <th>外   盘</th>
+                    <th>内   盘</th>
+                    <th>买   一</th>
                     <th>买一量（手）</th>
-                    <th>卖一</th>
+                    <th>卖   一</th>
                     <th>卖一量</th>
                     <!--<th>最近逐笔成交</th>-->
-                    <th>时间</th>
-                    <th>涨跌</th>
+                    <!--<th>时间</th>-->
+                    <th>涨   跌</th>
                     <th>涨跌%</th>
-                    <th>最高</th>
-                    <th>最低</th>
+                    <th>最   高</th>
+                    <th>最   低</th>
                     <th>成交量（手）</th>
                     <th>成交额（万）</th>
-                    <th>换手率</th>
+                    <th>换手率%</th>
                     <th>市盈率</th>
                     <th>振幅</th>
                     <th>流通市值</th>
-                    <th>总市值</th>
+                    <th>总市值（亿）</th>
                     <th>市净率</th>
                     <th>涨停价</th>
                     <th>跌停价</th>
@@ -74,7 +75,7 @@
                     <td>{{result.sell_one}}</td>
                     <td>{{result.sell_one_quantity}}</td>
                     <!--<td>{{result.recently_deal}}</td>-->
-                    <td>{{result.time}}</td>
+                    <!--<td>{{result.time}}</td>-->
                     <td>{{result.ups_downs}}</td>
                     <td>{{result.ups_downs_percent}}</td>
                     <td>{{result.highest}}</td>

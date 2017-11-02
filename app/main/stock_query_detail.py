@@ -6,7 +6,6 @@ def get_stock_detail(stock_no):
     """
         接口介绍：http://blog.csdn.net/ustbhacker/article/details/8365756
     """
-    # 使用腾讯股票查询接口进行查询
     f = urllib.request.urlopen('http://qt.gtimg.cn/q=' + str(stock_no))
     res = f.read().decode('gbk')
     f.close()
