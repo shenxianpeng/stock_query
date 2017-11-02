@@ -5,7 +5,7 @@ from flask import render_template
 
 from app.main.stock_query import stock_check, result_parse, get_stock
 from app.main.stock_query_detail import stock_check_detail, result_parse_detail, get_stock_detail
-from app.main.weather import weather
+from app.main.weather import weather_query, get_city
 
 app = flask.Flask(__name__, template_folder='app/templates')
 
@@ -51,8 +51,9 @@ def weather():
         return render_template("weather.html", result=result)
     elif flask.request.method == 'POST' and flask.request.form.get('query', None) == "查询":
         city = flask.request.form['city']
+        city = get_city(city)
         if city != 0:
-            result = weather(city)
+            result = weather_query(get_city(city))
             return render_template("weather.html", result=result)
         else:
             return render_template("weather.html", warning="请输入城市名称")
