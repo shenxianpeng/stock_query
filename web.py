@@ -7,12 +7,12 @@ from app.main.stock_query import stock_check, result_parse, get_stock
 from app.main.stock_query_detail import stock_check_detail, result_parse_detail, get_stock_detail
 from app.main.weather import weather_query, get_city
 
-app = flask.Flask(__name__, template_folder='app/templates')
+app = flask.Flask(__name__, template_folder='app/templates', static_folder='app/static')
 
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
     result = {}
-    return render_template("/homepage.html", result=result)
+    return render_template("homepage.html", result=result)
 
 
 @app.route('/stock.html', methods=['GET', 'POST'])
@@ -60,4 +60,4 @@ def weather():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=4501)
+    app.run(debug=False, host='127.0.0.1', port=4501)
