@@ -20,38 +20,30 @@
   <form class="bs-example bs-example-form" role="form" action="{{url_for('weather')}}" method="POST">
       <br>
       <div class="input-group" style="margin-left: 5%">
-          <h5 >全国各地天气预报查询系统</h5>
-          <label for="search">输入城市:</label>
+          <h5 >天气预报查询，输入城市</h5>
           <input type="text" class="form-control" id="search" placeholder="大连" style="display: inline;width: 50%;height: 25px" name="city">
           <input type="submit" value="查询" style="margin-left: 2%" name="query">
       </div>
   {% if data %}
   <div style="margin-top:60px;padding:60px;background-color: white;">
       <table class="table table-bordered table-hover" >
-      <thead>
-        <tr>
-            <th>国家</th>
-            <th>城市</th>
-            <th>时间</th>
-            <th>天气</th>
-            <th>温度</th>
-            <th>最高温度</th>
-            <th>最低温度</th>
-            <th>体感温度</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-            <td>{{ data["国家"] }}</td>
-            <td>{{ data["城市"] }}</td>
-            <td>{{ data["时间"] }}</td>
-            <td>{{ data["天气"] }}</td>
-            <td>{{ data["温度"] }}</td>
-            <td>{{ data["最高温度"] }}</td>
-            <td>{{ data["最低温度"] }}</td>
-            <td>{{ data["体感温度"] }}</td>
-        </tr>
-      </tbody>
+          <caption>查询结果如下</caption>
+          <thead>
+            <tr>
+                <th>城市</th>
+                <th>时间</th>
+                <th>Week</th>
+                <th>天气</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>{{ result.sk.temp }}</td>
+                <td>{{ result.sk.wind_direction }}</td>
+                <td>{{ result.sk.wind_strength }}</td>
+                <td>{{ result.sk.humidity }}</td>
+            </tr>
+          </tbody>
   </table>
     {% endif %}
     {% if warning %}

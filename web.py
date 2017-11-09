@@ -53,11 +53,11 @@ def weather():
         city = flask.request.form['city']
         city = get_city(city)
         if city != 0:
-            result = weather_query(get_city(city))
+            result = weather_query(city)
             return render_template("weather.html", result=result)
         else:
             return render_template("weather.html", warning="请输入城市名称")
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='127.0.0.1', port=4501)
+    app.run(debug=True, host='127.0.0.1', port=4501)
