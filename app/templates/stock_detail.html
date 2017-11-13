@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="icon" href="/static/images/icon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/images/query.png" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <script src="../static/js/jquery-3.1.1.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
@@ -21,7 +21,7 @@
         <br>
         <div class="input-group" style="margin-left: 5%">
             <h5>股票详细行情查询，输入股票代码：</h5>
-            <input type="text" class="form-control" style="display: inline;width: 50%;height: 25px" name="storkcode">
+            <input type="text" class="form-control" placeholder="601880" style="display: inline;width: 50%;height: 25px" name="storkcode">
             <input type="submit" value="查询" style="margin-left: 2%" name="query">
         </div>
         <div>
@@ -42,8 +42,6 @@
                     <th>买一量（手）</th>
                     <th>卖   一</th>
                     <th>卖一量</th>
-                    <!--<th>最近逐笔成交</th>-->
-                    <!--<th>时间</th>-->
                     <th>涨   跌</th>
                     <th>涨跌%</th>
                     <th>最   高</th>
@@ -74,8 +72,6 @@
                     <td>{{result.buy_one_quantity}}</td>
                     <td>{{result.sell_one}}</td>
                     <td>{{result.sell_one_quantity}}</td>
-                    <!--<td>{{result.recently_deal}}</td>-->
-                    <!--<td>{{result.time}}</td>-->
                     <td>{{result.ups_downs}}</td>
                     <td>{{result.ups_downs_percent}}</td>
                     <td>{{result.highest}}</td>
@@ -100,8 +96,9 @@
             </alert>
             {% endif %}
         </div>
+        <br>
+        <a href="/" style="margin-left: 5%" >返回首页</a>
     </form>
-
 </div>
 </body>
 </html>
