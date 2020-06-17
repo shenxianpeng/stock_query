@@ -1,4 +1,10 @@
-### Run stock query
+## Install
+```
+pip install requirements.txt
+```
+
+## Run
+
 ```
 $ python web.py
 ```
